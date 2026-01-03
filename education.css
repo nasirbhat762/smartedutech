@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+section > h1 {
+  color: #0e374b;
+  animation: text-y-animation ease-out;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
+.text-custom {
+  color: #0e374b !important;
+}
+.main-box {
+  height: 110vh;
+  /* border: 2px solid red; */
+  display: flex;
+  gap: 5px;
+}
+.main-box .left {
+  width: 60vw;
+}
+.main-box aside {
+  width: 40vw;
+  /* border: 2px solid red; */
+  overflow-y: scroll;
+  padding: 5px 0 0 0;
+  opacity: 0;
+  animation: right-animation 2s ease-out 0.5s 1 normal forwards;
+}
+aside > .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+aside > .cards > .custom-card {
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  justify-content: center;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+aside > .cards > .custom-card > img {
+  width: 100px;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+}
+.main-box .courses-carousel-container {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  align-items: center;
+  opacity: 0;
+  animation: left-animation 2s ease-out 0.5s 1 normal forwards;
+}
+.custom-course-image {
+  width: 60vw;
+  height: 55vh;
+  border-radius: 5px;
+}
+.main-box .videos-carousel-container {
+  height: 50vh;
+  /* border: 1px solid blue; */
+  opacity: 0;
+  animation: left-animation 2s ease-out 1s 1 normal forwards;
+}
+.youtube-video {
+  height: 50vh;
+  width: 60vw;
+  border-radius: 5px;
+}
+
+fieldset {
+  width: 350px;
+  padding: 10px;
+  border-radius: 7px;
+  box-shadow: 3px 3px 3px lightgray;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.success-stories-container {
+  /* border: 5px solid red; */
+  width: 60vw;
+  min-height: 60vh;
+  height: fit-content;
+  margin: 10px auto;
+  box-shadow: 5px 5px 3px lightgray !important;
+  border-radius: 5px;
+}
+
+.success-card {
+  width: inherit;
+  height: inherit;
+  padding: 10px;
+}
+.custom-shadow {
+  box-shadow: 5px 5px 3px lightgray !important;
+}
+
+.carousel-control-prev-icon {
+  background-image: none; /* Remove the default SVG icon */
+  border: solid 2px yellow; /* Create a custom arrow icon */
+  border-width: 2px 2px 0 0; /* Adjust arrow shape */
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  transform: rotate(-135deg);
+  position: relative;
+}
+.carousel-control-next-icon {
+  background-image: none; /* Remove the default SVG icon */
+  border: solid yellow; /* Create a custom arrow icon */
+  border-width: 2px 2px 0 0;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  transform: rotate(45deg);
+  position: relative;
+}
+.card-animation {
+  animation: simple-card-animation ease-out;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
+.text-y-animation {
+  animation: text-y-animation ease-out 1s;
+}
+.home {
+  opacity: 0;
+  animation: text-y-animation 0.5s ease-out 0.5s normal forwards;
+}
+.courses {
+  opacity: 0;
+  animation: text-y-animation 0.6s ease-out 0.6s normal forwards;
+}
+.testseries {
+  opacity: 0;
+  animation: text-y-animation 0.7s ease-out 0.7s normal forwards;
+}
+.aboutus {
+  opacity: 0;
+  animation: text-y-animation 0.8s ease-out 0.8s normal forwards;
+}
+.services {
+  opacity: 0;
+  animation: text-y-animation 0.9s ease-out 0.9s normal forwards;
+}
+/* media query for success stories  */
+@media only screen and (max-width: 425px) {
+  .success-stories-container {
+    /* border: 5px solid red; */
+    width: 95vw;
+    min-height: 100vh !important;
+    height: fit-content;
+    margin: 10px auto;
+    box-shadow: 5px 5px 3px lightgray !important;
+    border-radius: 5px;
+  }
+}
+
+/* media query for  main-box  */
+@media only screen and (max-width: 426px) {
+  .main-box {
+    height: 150vh;
+    /* border: 2px solid red; */
+    flex-wrap: wrap;
+  }
+  .main-box .left {
+    width: 100vw;
+    height: 100vh;
+    /* background-color: lightcoral; */
+  }
+  .main-box aside {
+    width: 100vw;
+    height: 50vh;
+  }
+  .main-box .courses-carousel-container {
+    height: 50vh;
+
+    /* border: 1px solid red; */
+  }
+  .main-box .videos-carousel-container {
+    height: 50vh;
+    /* border: 1px solid blue; */
+  }
+  .youtube-video {
+    height: 50vh;
+    width: 94vw;
+  }
+  .custom-course-image {
+    width: 94vw;
+    height: 40vh;
+  }
+}
+
+@keyframes simple-card-animation {
+  from {
+    transform: translate(-50px, 0) scale(0.9);
+    opacity: 0;
+  }
+}
+
+@keyframes text-y-animation {
+  from {
+    transform: translate(0, -50px) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes left-animation {
+  from {
+    transform: translate(-200px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes right-animation {
+  from {
+    transform: translate(200px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
